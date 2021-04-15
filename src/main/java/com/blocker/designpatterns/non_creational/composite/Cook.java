@@ -1,0 +1,19 @@
+package com.blocker.designpatterns.non_creational.composite;
+
+import com.blocker.designpatterns.non_creational.observer.OrderObserver;
+
+public class Cook extends AbstractEmployee implements OrderObserver {
+  public Cook(String name) {
+    super(name);
+  }
+
+  @Override
+  public Role getRole() {
+    return Role.COOK;
+  }
+
+  @Override
+  public void notifyAboutNew(String order) {
+    System.out.println("Notifying " + super.getName() + " about order: " + order);
+  }
+}
